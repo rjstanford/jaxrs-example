@@ -5,6 +5,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import org.skife.jdbi.v2.Handle;
 import org.skife.jdbi.v2.TransactionCallback;
@@ -78,4 +79,22 @@ public class DatabaseService {
 		CounterDAO dao = DatabaseUtil.dbi.onDemand(CounterDAO.class);
 		return "Got it: " + dao.getToObject().getAmount();
 	}
+
+	@GET
+	@Path("/createTables")
+	@Produces(MediaType.APPLICATION_JSON)
+	@ApiOperation(value = "Create the database tables (one time only)")
+	public Result createTables() {
+		Result result = DatabaseUtil.dbi.inTransaction(new TransactionCallback<Result>() {
+			public Result inTransaction(Handle h, TransactionStatus status) {
+				h.execute("CREATE TABLE counter (curval integer)"); 
+				h.execute("INSERT INTO counter VALUES ( 0 )");
+				Result result = new Result();
+				result.success = true;
+				return result;
+			}
+		});
+		return result;
+	}
+
 }
