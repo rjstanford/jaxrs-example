@@ -25,3 +25,13 @@ Finally it assumes that you have a DATABASE_URL environment variable set similar
 ```
 export DATABASE_URL=postgres://dbuser:dbpass@localhost/databasename
 ```
+
+To run it on a self-contained [Heroku](https://get.heroku.com) environment, simply install git and the heroku toolbelt locally and issue the following commands:
+```
+git clone https://github.com/rjstanford/jaxrs-example.git;
+heroku create;
+heroku addons:add heroku-postgresql;
+heroku addons:add newrelic:standard;
+heroku ps:scale web=1;
+git push heroku master;
+```
