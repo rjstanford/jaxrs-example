@@ -13,4 +13,4 @@ INSERT INTO counter VALUES ( 0 );
 
 Finally it assumes that you have a DATABASE_URL environment variable set similar to:
 
-export DATABASE_URL=postgres://dbuser:dbpass@localhost/vector
+export DATABASE_URL=postgres://dbuser:dbpass@localhost/databasename
