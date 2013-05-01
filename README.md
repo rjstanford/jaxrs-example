@@ -7,19 +7,11 @@ It uses:
 * [Maven](http://maven.apache.org/) for configuration
 * [Jetty](http://www.eclipse.org/jetty/) as a container
 * [Jackson 2.0](http://jackson.codehaus.org/) for JSON encoding/decoding
-* [JDBI](http://jdbi.org) for database access
+* [JDBI](http://jdbi.org) for database access using the standard Postgres driver connection pooling
 * [Postgres](http://www.postgresql.org) as the underlying database
 * [Swagger](https://developers.helloreverb.com/swagger/) for API documentation
 
-To keep things simple it assumes that you have a Postgress installation containing a table:
-
-```
-CREATE TABLE counter (
-  curval integer
-); 
-
-INSERT INTO counter VALUES ( 0 );
-```
+The APIs are all served from the /api/ endpoint.  To make things interesting I've included the Swagger GUI client at ```/swagger/``` - note that this is absolutely not needed for deployment, and you can use any REST client to access the API endpoints.  The endpoints are documented at ```/api/api-docs/``` which is where this copy of Swagger will look by default when its accessed.
 
 Finally it assumes that you have a DATABASE_URL environment variable set similar to:
 ```
@@ -31,7 +23,8 @@ To run it on a self-contained [Heroku](https://get.heroku.com) environment, simp
 git clone https://github.com/rjstanford/jaxrs-example.git;
 heroku create;
 heroku addons:add heroku-postgresql;
-heroku addons:add newrelic:standard;
 heroku ps:scale web=1;
 git push heroku master;
 ```
+
+Access it through the URL that Heroku gives you and you should be good to go.  There's a (not very pretty) convenience API method at ```/api/database/createTables``` (its exposed through the Swagger docs also) that will create the tables for you - or fail messily if they already exist.
