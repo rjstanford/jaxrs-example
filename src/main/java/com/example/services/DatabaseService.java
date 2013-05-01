@@ -97,4 +97,8 @@ public class DatabaseService {
 		return result;
 	}
 
+	public static class Result {
+		public boolean success;
+	}
+
 }
