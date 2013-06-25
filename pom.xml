@@ -58,7 +58,18 @@
 			<artifactId>jdbi</artifactId>
 			<version>2.48.2</version>
 		</dependency>
+		<dependency>
+			<groupId>com.jolbox</groupId>
+			<artifactId>bonecp</artifactId>
+			<version>0.7.1.RELEASE</version>
+		</dependency>
 
+<dependency>
+	<groupId>org.slf4j</groupId>
+	<artifactId>slf4j-api</artifactId>
+	<version>1.7.5</version>
+</dependency>
+            
 		<!-- Swagger -->
 		<dependency>
 			<groupId>com.wordnik</groupId>
