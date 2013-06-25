@@ -7,7 +7,7 @@ It uses:
 * [Maven](http://maven.apache.org/) for configuration
 * [Jetty](http://www.eclipse.org/jetty/) as a container
 * [Jackson 2.0](http://jackson.codehaus.org/) for JSON encoding/decoding
-* [JDBI](http://jdbi.org) for database access using the standard Postgres driver connection pooling
+* [JDBI](http://jdbi.org) and [BoneCP](http://jolbox.com) for Postgres access
 * [Postgres](http://www.postgresql.org) as the underlying database
 * [Swagger](https://developers.helloreverb.com/swagger/) for API documentation
 
