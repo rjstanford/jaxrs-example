@@ -10,7 +10,7 @@
 	</properties>
 	<dependencies>
 
-		<!-- Jetty -->
+		<!-- Jetty (overall container) -->
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-servlet</artifactId>
@@ -22,16 +22,18 @@
 			<version>7.6.0.v20120127</version>
 		</dependency>
 
-		<!-- Jersey -->
+		<!-- Jersey (JAX-RS RESTful services)-->
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>1.17.1</version>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-json</artifactId>
-			<version>1.17.1</version>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>
@@ -64,12 +66,12 @@
 			<version>0.7.1.RELEASE</version>
 		</dependency>
 
-<dependency>
-	<groupId>org.slf4j</groupId>
-	<artifactId>slf4j-api</artifactId>
-	<version>1.7.5</version>
-</dependency>
-            
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
 		<!-- Swagger -->
 		<dependency>
 			<groupId>com.wordnik</groupId>
