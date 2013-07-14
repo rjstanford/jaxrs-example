@@ -27,4 +27,4 @@ heroku ps:scale web=1;
 git push heroku master;
 ```
 
-Access it through the URL that Heroku gives you and you should be good to go.  There's a (not very pretty) convenience API method at ```/api/database/createTables``` (its exposed through the Swagger docs also) that will create the tables for you - or fail messily if they already exist.
+Access it through the URL that Heroku gives you and you should be good to go.
