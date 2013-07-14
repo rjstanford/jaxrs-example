@@ -13,7 +13,7 @@ import org.skife.jdbi.v2.TransactionStatus;
 import org.skife.jdbi.v2.tweak.HandleCallback;
 import org.skife.jdbi.v2.util.LongMapper;
 
-import com.example.DatabaseUtil;
+import com.example.database.DatabaseUtil;
 import com.example.models.AmountBean;
 import com.example.models.CounterDAO;
 import com.sun.jersey.spi.resource.Singleton;
@@ -64,7 +64,7 @@ public class DatabaseService {
 
 	@PUT
 	@Consumes("application/json")
-	@ApiOperation(value = "Set counter with an object")
+	@ApiOperation(value = "Set counter with an object", notes = "Expects an object like { amount : '123' }")
 	public synchronized String setStatus(@ApiParam(value = "New schedule data", required = true) AmountBean amountBean) {
 		CounterDAO dao = DatabaseUtil.dbi.onDemand(CounterDAO.class);
 		dao.setFromObject(amountBean);

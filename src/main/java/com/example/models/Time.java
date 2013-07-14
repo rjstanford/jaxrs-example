@@ -4,9 +4,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@XmlRootElement
 public class Time {
 
     private String timezone;
@@ -18,6 +17,9 @@ public class Time {
     private final int second;
     private final Date date;
 
+    @JsonIgnore
+    public String fred = "Fred";
+    
     public Time() {
         this(TimeZone.getDefault());
     }

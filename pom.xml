@@ -22,19 +22,23 @@
 			<version>7.6.0.v20120127</version>
 		</dependency>
 
-		<!-- Jersey (JAX-RS RESTful services)-->
+		<!-- Jersey (JAX-RS RESTful server)-->
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- Jersey (JAX-RS RESTful client)-->
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<!-- Jersey (JSON translation)-->
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>
 			<artifactId>jackson-jaxrs-json-provider</artifactId>
@@ -70,6 +74,12 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+			<version>3.0.1</version>
 		</dependency>
 
 		<!-- Swagger -->
