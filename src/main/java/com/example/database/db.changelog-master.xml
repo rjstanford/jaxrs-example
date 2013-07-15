@@ -4,14 +4,6 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
   
-    <changeSet id="1" author="rjstanford">
-        <comment>Set up the simple counter table</comment>
-        <createTable tableName="counter">
-        	<column name="curval" type="integer"/>
-        </createTable>
-        <insert tableName="counter">
-        	<column name="curval">0</column>
-        </insert>
-    </changeSet>
-    
+	<include file="changes/0001_Counter_for_database_service.xml" relativeToChangelogFile="true"/>
+ 
 </databaseChangeLog> 
